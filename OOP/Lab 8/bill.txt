@@ -1,0 +1,5 @@
+               Amazon E-Commerce Company
+S.No. Particulars         Quantity  Price  Sub-total 
+1     Laptop              2         100000 200000    
+2     Rolex               3         5000   15000     
+Total                                    = 215000
