@@ -17,13 +17,8 @@ int main() {
     cout << "Enter tolerable error? ";
     cin >> err;
 
-    if (f(a) * f(b) > 0) {
-        cout << "Initial guesses are incorrect!";
-        return 0;
-    }
-
     do {
-        if (f(a) == f(b)) {
+        if (abs(f(a)-f(b)) < 0.0005f) {
             cout << "Mathematical Error";
             return 0;
         }

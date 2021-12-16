@@ -9,7 +9,7 @@ using namespace std;
 float f(float x) {
     return x * log10(x) - 1.2; // x=2, root=2.74
     // return 3*x-cos(x)-1;     // x=0.6, root=0.607
-    // return x * (1 - x);      // x=0.5, Mathematical error since f1(x)=0
+    // return x * (1 - x); // x=0.5, Mathematical error since f1(x)=0
 }
 
 float f1(float x) {
@@ -22,7 +22,7 @@ int main() {
     cout << "Enter initial guess and tolerable error? ";
     cin >> x >> err;
     do {
-        if (f1(x) == 0.f) {
+        if (abs(f1(x)) < 0.0005f) {
             cout << "Mathematical error" << endl;
             return 0;
         }
