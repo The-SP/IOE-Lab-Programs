@@ -75,7 +75,7 @@ public:
         node[i].next = q;
     }
 
-    void insertAfter(T data, int x) {
+    void insertAfter(T data, T x) {
         if (start == -1) {
             cout << "Invalid insertion: Empty list\n";
             return;
@@ -92,7 +92,7 @@ public:
         node[i].next = q; 
     }
 
-    void delAfter(T data) {
+    void deleteAfter(T data) {
         int q, i;
         i = findIndex(data);
         if (i == -1 || node[i].next == -1) {
@@ -191,11 +191,11 @@ int main() {
             break;
         case 6:
             cout << "Enter after which element to delete : ";
-            cin >> input;
-            list.delAfter(input);
+            cin >> ref_element;
+            list.deleteAfter(ref_element);
             break;
         case 7:
-            cout << "You pressed exit";
+            cout << "\nYou pressed exit";
             exit(1);
         default:
             cout << "Invalid choice.";

@@ -13,8 +13,7 @@ struct node {
 template <class T>
 class Queue {
     node<T> node[MAXSIZE];
-    int avail, start;
-    int rear, front;
+    int avail, rear, front;
 
     int getNode() {
         if (avail == -1) {
@@ -41,7 +40,6 @@ public:
     Queue() {
         initialOrdering();
         avail = 0;
-        start = -1;
         rear = front = -1;
     }
 
@@ -72,7 +70,7 @@ public:
         T item = node[p].info;
         cout << "Deleted item = " << item << endl;
         if (front == -1) // if front becomes null then change rear also as null
-            rear == -1;
+            rear = -1;
         freeNode(p);
     }
 
