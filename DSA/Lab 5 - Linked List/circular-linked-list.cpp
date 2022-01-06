@@ -21,7 +21,7 @@ public:
         node<T> *ptr = new node<T>;
         ptr->info = x;
         if (!head) {
-            ptr->next = head;
+            ptr->next = ptr;
             head = tail = ptr;
         } else {
             ptr->next = head;
@@ -34,7 +34,7 @@ public:
         node<T> *ptr = new node<T>;
         ptr->info = x;
         if (!head) { // Empty list
-            ptr->next = head;
+            ptr->next = ptr;
             head = tail = ptr;
         } else {
             ptr->next = head;
