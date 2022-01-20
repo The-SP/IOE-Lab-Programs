@@ -3,7 +3,7 @@ using namespace std;
 
 long int tailFactorial(long int n, long int result=1) {
     if (n==0) return result;
-    return tailFactorial(n-1, result*n);
+    return tailFactorial(n-1, result*n);     // The last executed statement is recursive call
 }
 
 long int tailFibonacci(long int n, long int a=1, long int b=1) {
