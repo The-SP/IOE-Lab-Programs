@@ -143,7 +143,7 @@ public:
         i->prev = ptr->prev;
         if (ptr == head) // current head is deleted, so assign new head
             head = i;
-        else // ptr->prev !- nullptr
+        else // ptr->prev != nullptr
             ptr->prev->next = i;
         delete ptr;
     }
