@@ -65,7 +65,7 @@ int main() {
     float ans;
     for (int i = 0; i < d + 1; i++) {
         ans = a[i][d + 1] / a[i][i];
-        if (ans < 0.000001) ans = 0;
+        if (abs(ans) < 0.000001) ans = 0;
         cout << (char)('a' + i) << " = " << ans << endl;
     }
 }
