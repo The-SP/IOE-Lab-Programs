@@ -7,8 +7,7 @@ void swap(int *x, int *y) {
     *y = temp;
 }
 
-void selectionSort(int arr[], int n) {
-    int temp;
+void bubbleSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++)
         for (int j = 0; j < n - i - 1; j++)
             if (arr[j] > arr[j + 1])
@@ -26,7 +25,7 @@ int main() {
     int n = sizeof(arr) / sizeof(arr[0]);
     cout << "Initial array: \t";
     displayArray(arr, n);
-    selectionSort(arr, n);
+    bubbleSort(arr, n);
     cout << "Sorted array: \t";
     displayArray(arr, n);
     return 0;
