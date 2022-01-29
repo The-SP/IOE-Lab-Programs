@@ -43,14 +43,18 @@ int main() {
         flag = 1; // initialize flag to 1 and later check if it is changed to 0
 
         // Display Y and assign new X = Y/max
-        cout << "\n i=" << count++ << "\t max = " << max << "\tY = ";
+        cout << "\n i=" << count << "\t max = " << max << "\tY = ";
         for (int i = 0; i < n; i++) {
             y[i] /= max;
             cout << setprecision(4) << y[i] << ' ';
-            flag &= (abs(y[i] - x[i]) < error);
-            x[i] = y[i]; // change col eigen vector X
+            flag &= (abs(y[i] - x[i]) < error); // compute error between Y and X
+            x[i] = y[i]; // change column eigen vector X
         }
-    } while (!flag && count < 100);
+        if (count++ > 100) {
+            cerr << endl << "Value not found";
+            exit(1);
+        }
+    } while (!flag);
 
     // Ans
     cout << "\n\nDominant Eigen vlaue = " << max;
