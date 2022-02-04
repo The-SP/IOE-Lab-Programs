@@ -5,43 +5,44 @@
 using namespace std;
 
 float f(int x) {
-    return 1 / (1 + pow(x, 2));
+    return x*sin(x)+cos(x)+5;   // (a, b)=(0, 6), n=6,  exact ans = 23.68
+    // return 1 / (1 + pow(x, 2));     // (a, b)=(0, 6), n=6, exact ans = 1.40565
 }
 
 void trapezoidal(float a, float b, int n) {
-    float h = (b-a)/n;
+    float h = (b - a) / n;
     float integration = f(a) + f(b);
     for (int i = 1; i < n; i++)
-        integration += 2*f(a+i*h);
+        integration += 2 * f(a + i * h);
     integration *= (h / 2);
     cout << "Trapezoidal rule = " << integration << endl;
 }
 
 void simpson13rd(float a, float b, int n) {
-    if (n%2 != 0)
-        n = n+1;
-    float h = (b-a)/n;
+    if (n % 2 != 0)
+        n = n + 1;
+    float h = (b - a) / n;
     float integration = f(a) + f(b);
     int m;
     for (int i = 1; i < n; i++) {
-        m = (i%2 == 0) ? 2 : 4;
-        integration += m*f(a+i*h);            
+        m = (i % 2 == 0) ? 2 : 4;
+        integration += m * f(a + i * h);
     }
-    integration *= (h/3);
+    integration *= (h / 3);
     cout << "Simpson's 1/3 rule = " << integration << endl;
 }
 
 void simpson38th(float a, float b, int n) {
     if (n % 3 != 0)
-        n += (3-n%3);
-    float h = (b-a)/n;
+        n += (3 - n % 3);
+    float h = (b - a) / n;
     float integration = f(a) + f(b);
     int m;
     for (int i = 1; i < n; i++) {
-        m = (i%3 == 0) ? 2 : 3;
-        integration += m*f(a+i*h);            
+        m = (i % 3 == 0) ? 2 : 3;
+        integration += m * f(a + i * h);
     }
-    integration *= (3*h/8);
+    integration *= (3 * h / 8);
     cout << "Simpson's 3/8 rule = " << integration << endl;
 }
 
