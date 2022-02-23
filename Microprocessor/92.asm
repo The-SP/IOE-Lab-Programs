@@ -56,7 +56,7 @@ main proc far
    mov ax,4c00h 
    int 21h  
    
-   toohigh: 
+toohigh: 
    lea dx, prompt3
    mov ah, 9h
    int 21h   
@@ -71,7 +71,7 @@ parsedec proc near ;returns output in dx
     mov dx, 0
     mov cx, 1
     mov bl, act_len  
-    labelpd: 
+labelpd: 
     dec bx  
     mov ah, 0
     mov al, num[bx]  
@@ -92,7 +92,7 @@ parsedec endp
 unparsedec proc near ;send 32-bit input as dx:ax
    mov cx,0
    
-   labelunpd:
+labelunpd:
    div ten16
    add dx, 30h
    push dx
@@ -107,7 +107,7 @@ unparsedec proc near ;send 32-bit input as dx:ax
    mov ah, 02h
    
    
-   poppingd:
+poppingd:
    pop dx
    int 21h  
    loop poppingd
@@ -117,12 +117,12 @@ unparsedec endp
 unparsehex proc near
    mov cx,0
    
-   labelunph:
+labelunph:
    div sixteen
    cmp dx,0ah 
    jb skip
    add dx, 7h
-   skip: add dx, 30h
+skip: add dx, 30h
    push dx
    mov dx, 0
    inc cx
@@ -134,7 +134,7 @@ unparsehex proc near
    int 21h  
    mov ah, 02h
    
-   poppingh:
+poppingh:
    pop dx
    int 21h  
    loop poppingh

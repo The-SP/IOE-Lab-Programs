@@ -1,4 +1,4 @@
-;lab8, no 4
+;lab 8, no 4
 TITLE to input string and scroll a window of size 20x20 at the center of the screen then, display string at the centre
 
 row_c equ 12d   ; 25/2
@@ -38,8 +38,8 @@ main proc far
     ; scroll 20X20 at centre
     mov bh, 70h     ; black on white
     mov ch, row_cs  ; (25/2-10)
-    mov cl, col_cs  ; (25/2+10)
-    mov dh, row_ce  ; (80/2-10)
+    mov cl, col_cs  ; (80/2-10)
+    mov dh, row_ce  ; (25/2+10)
     mov dl, col_ce  ; (80/2+10)
     int 10h 
           

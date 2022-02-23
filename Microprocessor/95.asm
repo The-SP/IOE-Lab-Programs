@@ -1,4 +1,4 @@
-;lab 9, no 3
+;lab 9, no 5
 TITLE to add ten 16-bit numbers stored in memory and display the result in decimal format
 
 .model small

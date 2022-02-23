@@ -10,7 +10,6 @@ TITLE to count no of words in a string
     act_len db ?
     str db 100 dup('$')
     ten dw 10
-    sixteen dw 16
     count dw 0
 .code
 main proc far 
