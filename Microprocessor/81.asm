@@ -17,14 +17,14 @@ main proc far
     ; scroll window
     mov ax, 0600h 
     mov bh, 70h     ; black on white bg
-    mov cx, 0413h 
-    mov dx, 133bh 
+    mov cx, 0413h   ; (04, 19)d
+    mov dx, 133bh   ; (19, 59)d
     int 10h
 
     ; set cursor position
     mov ah, 02h 
     mov bh, 00h 
-    mov dx, 0c1eh   ; (10, 30)d
+    mov dx, 0c1eh   ; (12, 30)d
     int 10h 
 
     ; display string
