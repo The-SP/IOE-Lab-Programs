@@ -1,5 +1,7 @@
 ; Lab 1, No 1
-; A table consists of ten 8-bit data starting at 8050H. Write an 8085 program to store the sum of odd numbers at 8060H and store sum of even numbers at 8070H. Also display the sum at output ports.
+; A table consists of ten 8-bit data starting at 8050H. 
+; Write an 8085 program to store the sum of odd numbers at 8060H and store sum of even numbers at 8070H. 
+; Also display the sum at output ports.
 
 MVI A, 80H 
 OUT 43H
