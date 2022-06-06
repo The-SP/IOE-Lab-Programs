@@ -10,7 +10,7 @@ def AND(a, b):
 
 
 def OR(a, b):
-    return a + b
+    return int(bool(a + b))
 
 
 def adjust_number(x, y):
