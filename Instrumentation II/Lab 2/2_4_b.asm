@@ -1,0 +1,19 @@
+; Lab 2, No 4(a)
+
+MVI A, 86H
+OUT 83H 
+MVI A, 05H  ; set PC2 i.e STBb signal
+OUT 83H
+
+MVI A, 0DH
+SIM         ; unmask RST 6.5
+EI
+LOOP: JMP LOOP
+
+8FB9: JMP ROUTINE
+
+ROUTINE: 
+IN 81H
+OUT 80H
+EI
+RET
