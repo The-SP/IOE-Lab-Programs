@@ -1,4 +1,6 @@
 # 2D Transformation
+# Scale triangle by double with its centroid fixed
+# Rotate triangle by angle with its first vertex fixed
 from matplotlib import pyplot as plt
 from math import sin, cos, radians
 
@@ -47,12 +49,12 @@ def scale(x, y, sx, sy):
 
 def rotate(x, y, angle):
     # Fixed point for transformation
-    xf, yf = x[0], y[0]  # one of the vertices
+    xr, yr = x[0], y[0]  # one of the vertices
 
     # Composite Transformation Matrix
-    a = [[1, 0, xf], [0, 1, yf], [0, 0, 1]]
+    a = [[1, 0, xr], [0, 1, yr], [0, 0, 1]]
     b = [[cos(angle), -sin(angle), 0], [sin(angle), cos(angle), 0], [0, 0, 1]]
-    c = [[1, 0, -xf], [0, 1, -yf], [0, 0, 1]]
+    c = [[1, 0, -xr], [0, 1, -yr], [0, 0, 1]]
     matrix = matrix_multiply(a, b)
     matrix = matrix_multiply(matrix, c)
 
@@ -64,9 +66,10 @@ if __name__ == "__main__":
     x = [2, 10, 21]
     y = [4, 11, 6]
     draw(x, y)
-    rotate(x, y, radians(60))
-    draw(x, y)
+    # Scale triangle by double with its centroid fixed
     scale(x, y, 2, 2)
     draw(x, y)
-    # print(x, y)
+    # Rotate triangle by angle with its first vertex fixed
+    rotate(x, y, radians(60))
+    draw(x, y)
     plt.show()
