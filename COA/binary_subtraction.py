@@ -64,7 +64,4 @@ if __name__ == "__main__":
     y = input("Enter second number Y: ")
     x, y = adjust_number(x, y)
     sum, end_carry = binary_adder(x, twos_complement(y))
-    if end_carry == 0:  # no end carry
-        sum = twos_complement(sum)
-        sum = "-" + sum  # if no end carry, result is -ve of 2s complement of sum
     print(f"Difference = {sum}")

@@ -6,18 +6,15 @@ from binary_subtraction import twos_complement
 
 
 def booth(M, Q):
-    # Multiplicand M
-    M = "0" + M
-    M_comp = twos_complement(M)
+    count = max(len(M), len(Q))
+    M = M.zfill(count)
+    Q = Q.zfill(count)
 
-    # Multiplier Q (signed)
-    Q = Q.zfill(len(M))
-    Q = twos_complement(Q)
+    M_comp = twos_complement(M)                                                                                            
     Q_1 = "0"
     # initialize accumulator with zero
-    A = "0" * len(M)
+    A = "0" * count
 
-    count = len(M)
     for i in range(count):
         deciding_bits = Q[-1] + Q_1
         if deciding_bits == "10":
@@ -34,7 +31,9 @@ def booth(M, Q):
 
 if __name__ == "__main__":
     M = input("Enter multiplicand: ")
-    # Note: this program assumes the multiplier is signed i.e if i/p is "11"(3) it is considered as "11101"(-3)
-    Q = input("Enter signed multiplier: ")
+    Q = input("Enter multiplier: ")
     product = booth(M, Q)
     print(f"Product = {product}")
+
+# Note: In case of Booth's algorithm, an extra bit is always added to the binary numbers while giving input. 
+# eg: 12 = (01100)
