@@ -1,8 +1,7 @@
 # Signed Multiplication (2's Complement Multiplication)
 # Booth Algorithm
 
-from binary_addition import binary_adder
-from binary_subtraction import twos_complement
+from binary_subtraction import binary_adder, twos_complement
 
 
 def booth(M, Q):
@@ -18,9 +17,9 @@ def booth(M, Q):
     for i in range(count):
         deciding_bits = Q[-1] + Q_1
         if deciding_bits == "10":
-            A, carry = binary_adder(A, M_comp)
+            A = binary_adder(A, M_comp)
         elif deciding_bits == "01":
-            A, carry = binary_adder(A, M)
+            A = binary_adder(A, M)
         # Arithmentic Shift Right (ASR A, Q, Q_-1)
         Q_1 = Q[-1]
         Q = A[-1] + Q[:-1]

@@ -1,6 +1,6 @@
 # Multiplication of Two Unsigned Integer Binary Numbers By Patrial-Product Method
 
-from binary_addition import binary_adder
+from binary_subtraction import binary_adder
 
 
 def adjust_number(x, y):
@@ -18,7 +18,7 @@ def binary_multiplication(x, y, count):
     for i in range(count):
         # Test Yo, if it is 1 add content of X to the accumulator sum
         if y[-1] == "1":
-            sum, carry = binary_adder(sum, x)
+            sum = binary_adder(sum, x)
         # Left shift X
         x = x[1:] + "0"
         # Right shift Y

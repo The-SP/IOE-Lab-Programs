@@ -1,8 +1,7 @@
 # Division of Two Unsigned Integer Binary Numbers
 # Restoring Division Algorithm
 
-from binary_addition import binary_adder
-from binary_subtraction import twos_complement
+from binary_subtraction import binary_adder, twos_complement
 
 
 def restoring_division(Q, M):
@@ -19,13 +18,13 @@ def restoring_division(Q, M):
         Q = Q[1:]  # one bit is less, which is empty
 
         # A <- A - M
-        A, carry = binary_adder(A, M_comp)
+        A = binary_adder(A, M_comp)
 
         if A[0] == "1":
             # Set Qo to 0
             Q = Q + "0"
             # A <- A + M (restore A)
-            A, carry = binary_adder(A, M)
+            A = binary_adder(A, M)
         else:
             # Set Qo to 1
             Q = Q + "1"

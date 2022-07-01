@@ -35,7 +35,7 @@ def binary_adder(x, y, cin=0):
     for i in range(l - 1, -1, -1):
         bit_sum, carry = full_adder(int(x[i]), int(y[i]), carry)
         sum = str(int(bit_sum)) + sum
-    return (sum, carry)
+    return sum
 
 
 def twos_complement(y):
@@ -63,5 +63,5 @@ if __name__ == "__main__":
     x = input("Enter first number X: ")
     y = input("Enter second number Y: ")
     x, y = adjust_number(x, y)
-    sum, end_carry = binary_adder(x, twos_complement(y))
+    sum = binary_adder(x, twos_complement(y))
     print(f"Difference = {sum}")

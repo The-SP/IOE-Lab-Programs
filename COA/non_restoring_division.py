@@ -1,8 +1,7 @@
 # Division of Two Unsigned Integer Binary Numbers
 # Non-Restoring Division Algorithm
 
-from binary_addition import binary_adder
-from binary_subtraction import twos_complement
+from binary_subtraction import binary_adder, twos_complement
 
 
 def non_restoring_division(Q, M):
@@ -19,15 +18,15 @@ def non_restoring_division(Q, M):
         Q = Q[1:]  # one bit is less, which is empty
         if sign_bit == "1":
             # A <- A + M
-            A, carry = binary_adder(A, M)
+            A = binary_adder(A, M)
         else:
             # A <- A - M
-            A, carry = binary_adder(A, M_comp)
+            A = binary_adder(A, M_comp)
 
         Q += "0" if A[0] == "1" else "1"
 
     if A[0] == "1":  # if A is negative
-        A, carry = binary_adder(A, M)
+        A = binary_adder(A, M)
     return (Q, A)
 
 
