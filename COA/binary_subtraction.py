@@ -1,18 +1,6 @@
 # Subtraction of two unsigned integer binary number
 
 
-def XOR(a, b):
-    return a != b
-
-
-def AND(a, b):
-    return a * b
-
-
-def OR(a, b):
-    return int(bool(a + b))
-
-
 def adjust_number(x, y):
     l1, l2 = len(x), len(y)
     if l1 > l2:
@@ -23,8 +11,8 @@ def adjust_number(x, y):
 
 
 def full_adder(x, y, cin):
-    sum = XOR(XOR(x, y), cin)
-    cout = OR(OR(AND(x, y), AND(y, cin)), AND(x, cin))
+    sum = (x + y + cin) % 2
+    cout = int((x + y + cin) / 2)
     return (sum, cout)
 
 
@@ -34,7 +22,7 @@ def binary_adder(x, y, cin=0):
     carry = cin
     for i in range(l - 1, -1, -1):
         bit_sum, carry = full_adder(int(x[i]), int(y[i]), carry)
-        sum = str(int(bit_sum)) + sum
+        sum = str(bit_sum) + sum
     return sum
 
 
