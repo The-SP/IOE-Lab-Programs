@@ -11,6 +11,8 @@ This repository contains the codes for various practical assignments completed a
 - Numerical Methods
 - Computer Organization and Architecture (COA)
 - Digital Signal Analysis and Processing (DSAP)
+- Computer Network
+- Simulation and Modeling
 
 The codes in this repository are written in various programming languages such as C, C++, Python, etc. Each folder in this repository corresponds to a specific subject and contains the codes and relevant files for the practicals completed in that subject.
 
