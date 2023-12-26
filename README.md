@@ -14,7 +14,7 @@ This repository contains the codes for various practical assignments completed a
 - Computer Network
 - Simulation and Modeling
 
-The codes in this repository are written in various programming languages such as C, C++, Python, etc. Each folder in this repository corresponds to a specific subject and contains the codes and relevant files for the practicals completed in that subject.
+The codes in this repository are written in various programming languages such as C, C++, Python, Assembly, MATLAB, etc. Each folder in this repository corresponds to a specific subject and contains the codes and relevant files for the practicals completed in that subject.
 
 Please note that these codes are for reference purposes only and should not be submitted as your own work.
 
